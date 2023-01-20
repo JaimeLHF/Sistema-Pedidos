@@ -1,0 +1,511 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import url("../styleIndex.css");
+
+
+body {
+  font-family: Nunito, sans-serif;
+}
+
+#page {
+  overflow-x: hidden;
+}
+
+
+#login {
+  font-family: 'Quicksand', sans-serif;
+}
+
+#page.toggled #sidebar {
+  margin-left: -15rem;
+}
+
+
+#sidebar {
+  min-height: 100vh;
+  margin-left: 0;
+  width: 15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+}
+
+
+
+
+#sidebar header {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#page-content {
+  min-width: 0;
+  width: 100%;
+}
+
+#imagemLogo {
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+  border-radius: 15px 0 0 15px;
+}
+
+#contentOne #contentTwo {
+  border-radius: 15px 0 0 15px;
+}
+
+#img {
+  margin: auto;
+  max-width: 60%;
+  max-height: 60%;
+  width: auto;
+  height: auto;
+}
+
+#buttonLogin {
+  border-color: rgba(0, 0, 0, 0.26);
+  height: 50px;
+}
+
+#iconButton {
+  height: 50px;
+  background-color: transparent;
+}
+
+#buttonAdd {
+  background-color: transparent;
+  border: none;
+}
+
+#buttonSearch {
+  background-color: transparent;
+  border: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+#iconButtonSearch {
+  max-height: 75%;
+}
+
+#iconButtonZoom {
+  height: 5%;
+}
+
+#buttonSearch:hover {
+  background-image: linear-gradient(90deg, rgba(155, 44, 96, 0.178), rgba(107, 37, 111, 0.089));
+  border-radius: 50%
+}
+
+#headerCor {
+  margin-left: 35em;
+
+}
+
+#headerProd {
+  margin-left: 5em;
+}
+
+#headerQtd {
+  margin-left: 15em;
+}
+
+
+
+#thSearch {
+  text-align: center;
+  width: 100%;
+}
+
+
+#table {
+  background: rgba(88, 88, 88, 0.096);
+
+}
+
+tr:nth-child(even) {
+  background-color: white
+}
+
+tbody tr:hover {
+  background-color: rgb(204, 203, 203);
+}
+
+#thCheck {
+  width: 1%;
+}
+
+#thCod {
+  border-radius: 0.25em 0 0 0;
+  width: 5%;
+}
+
+#thProd {
+  width: 50%;
+}
+
+#thCor {
+  width: 40%;
+}
+
+caption {
+  padding: 10px;
+  caption-side: bottom;
+
+}
+
+#thHeader {
+  border-radius: 50%;
+  background-color: black;
+  color: #fff;
+  height: 30px;
+
+}
+
+#tbPessoas {
+  text-align: center;
+  border-spacing: 5px;
+  background: rgba(68, 0, 253, 0.05);
+}
+
+#tbodyPedidos,
+tr,
+td {
+  text-align: center;
+  border-spacing: 5px;
+  padding: 10px;
+}
+
+
+
+
+#thHeaderProducts {
+  background-image: linear-gradient(45deg, rgba(0, 226, 200, 0.911), rgba(6, 105, 235, 0.658));
+}
+
+#headerhed {
+  background-image: linear-gradient(45deg, rgba(1, 10, 9, 0.911), rgba(0, 3, 7, 0.658));
+  color: white;
+  font-size: 0.90em;
+  text-align: center;
+  width: 100%;
+  height: 45px;
+}
+
+#tableProducts {
+  background-color: rgba(0, 0, 0, 0.090);
+}
+
+
+#headerCod {
+  width: 5em;
+  border-top-left-radius: 0.25em;
+}
+
+#headerProd {
+  width: 45em;
+}
+
+#headerCor {
+  width: 30em;
+}
+
+#headerQtd {
+  width: 10em;
+}
+
+#headerPeso {
+  width: 10em;
+}
+
+#headerCub {
+  width: 10em;
+}
+
+#headerValUnit {
+  width: 10em;
+}
+
+#headerValTot {
+  width: 10em;
+
+}
+
+#headerActionEdit {
+  width: 5em;
+
+}
+
+#headerActionDel {
+  width: 5em;
+  border-top-right-radius: 0.25em;
+}
+
+#rowClient {
+  display: flex;
+  background-color: rgba(231, 236, 241, 0.3);
+  border: 1px solid rgba(138, 138, 138, 0.3);
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 0.25rem;
+}
+
+#rowInfo {
+  display: flex;
+  background-color: rgba(231, 236, 241, 0.3);
+  border: 1px solid rgba(138, 138, 138, 0.3);
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 0.25rem;
+}
+
+#rowDate {
+  display: flex;
+  background-color: rgba(231, 236, 241, 0.3);
+  border: 1px solid rgba(138, 138, 138, 0.3);
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 0.25rem;
+}
+
+#rowProduct {
+  display: flex;
+  background-color: rgba(231, 236, 241, 0.3);
+  border: 1px solid rgba(138, 138, 138, 0.3);
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 0.25rem;
+  max-width: 100%;
+}
+
+#placeHolder {
+  display: none;
+  font-size: large;
+
+}
+
+
+
+#codigo {
+  width: 5%;
+  text-align: center;
+}
+
+#peso {
+  width: 10%;
+}
+
+#cubagem {
+  width: 10%;
+}
+
+
+#hrLine {
+  border: 150;
+}
+
+
+
+#lDataPedido {
+  font-size: small;
+  text-align: center;
+}
+
+#lDataColeta {
+  font-size: small;
+  text-align: center;
+}
+
+#lDataEntrega {
+  font-size: small;
+  text-align: center;
+}
+
+#pagamento {
+  margin-right: 65em;
+  margin: auto;
+}
+
+#qtd {
+  width: 4.7em;
+}
+
+label {
+  font-size: small;
+}
+
+
+
+#documentModal {
+  width: 60vw;
+  height: 70vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#ufModal {
+  width: 5%;
+  text-align: center;
+  position: relative;
+}
+
+#cepModal {
+  width: 15%;
+}
+
+#tbodyRel {
+  text-align: center;
+}
+
+#thRel {
+
+  color: #fff;
+  background-color: black;
+  width: 50% !important;
+  /*Importante manter o !important rs */
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px !important;
+  text-align: center;
+}
+
+#tbodyModal {
+  text-align: center;
+}
+
+#thRelModal {
+  color: #fff;
+  background-color: black;
+  width: 50% !important;
+  /*Importante manter o !important rs */
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px !important;
+  text-align: center;
+}
+
+#thPed {
+  border-top-left-radius: 0.25rem;
+  width: 15%;
+}
+
+#thClient {
+  width: 30%;
+}
+
+#thData {
+  width: 10%;
+}
+
+#thTotal {
+  width: 15%;
+}
+
+#thSit {
+  width: 10%;
+}
+
+#thAction {
+  border-top-right-radius: 0.25rem;
+  width: 7%;
+}
+
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.input-box {
+  display: inline;
+  flex-direction: column;
+}
+
+.input-box input {
+  padding: 0.8rem 1.2rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.icon-box::before {
+  content: "";
+  display: table;
+  background-image: url("../img/caixas.png");
+  width: 50px;
+  height: 50px;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+
+}
+
+.icon-peso::before {
+  content: "";
+  display: table;
+  background-image: url("../img/peso.png");
+  width: 50px;
+  height: 50px;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+}
+
+.icon-cubagem::before {  
+  content: "";
+  display: table;
+  background-image: url("../img/cubo.png");
+  width: 50px;
+  height: 50px;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+}
+
+.icon-valorTotal::before,
+.icon-valorIPI::before {
+  content: "";
+  display: table;
+  background-image: url("../img/cifrao.png");
+  width: 50px;
+  height: 50px;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+}
+
+
+.firstCard,
+.secondCard,
+.thirdCard,
+.fourthCard,
+.fifthCard {
+  border-radius: .2rem;
+  border-left: rgba(0, 0, 0, 0.4) 4px solid;
+  background-image: url("../img/back\ card.png");
+  padding: 10px 20px;
+
+}
+
+.noPedido{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
+}
+
+@media (min-width: 720px) {
+
+  .cards {
+    gap: 2em 0;
+  }
+}
+

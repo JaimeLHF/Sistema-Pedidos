@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Login</title>
+  <!-- CSS & Sweet Alert -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/main.css">
+  <script src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'
+    type='text/css'>
+  <!-- CSS & Sweet Alert -->
+  <style>
+    input[type=text] {
+      width: 188px;
+      height: 16px;
+      font-family: serif;
+    }
+
+    /* webkit solution */
+    ::-webkit-input-placeholder {
+      font-family: FontAwesome;
+      text-align: right;
+    }
+
+    /* mozilla solution */
+    input:-moz-placeholder {
+      font-family: FontAwesome;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+  
+  <div class="container-fluid">
+    <div class="row" id="contentOne">
+      <div class="col-10 offset-1 text-center mt-5 pb-4">
+        <h1 class="h1" id="login">Login</h1>
+      </div>
+      <div class="col-10 offset-1 bg-white shadow-lg mb-5 border border-black" id="contentTwo">
+        <div class="row">
+          <div class="col-6 p-4 d-flex justify-content-center" id="imagemLogo">
+            <img src="./img/DRD_MÓVEIS.png" alt="Logo Firebase" id="img" />
+          </div>
+
+          <div class="col-6 p-5">
+
+            <div id="loginForm">
+
+              <div class="form-group mt-5">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control mt-2 w-50" required
+                  placeholder="&#xf0e0;" />
+
+              </div>
+              <div class="form-group">
+                <label for="password" class="mt-2">Senha</label>
+                <input type="password" name="password" id="password" class="form-control mt-2 w-50" required
+                  placeholder="&#xf023;" />
+              </div>
+              <button type="button" id="buttonLogin" class="btn btn-outline-primary mt-4 w-25" onclick="login()">
+                Login
+
+              </button>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+
+
+
+
+  <script src="JS/init.js"></script>
+  <script src="JS/auth.js"></script>
+
+
+  <!-- JavaScript -->
+
+</body>
+
+</html>

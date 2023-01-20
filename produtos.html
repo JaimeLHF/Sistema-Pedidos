@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <script src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"></script>
+  <link rel="stylesheet" href="CSS/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <title>Produtos</title>
+</head>
+
+<body>
+  <div id="page" class="d-flex">
+    <div id="sidebar" class="bg-light border-right">
+      <header><a href="relacao.html">Pedidos</a></header>
+      <nav class="list-group list-group-flush">
+        <a href="pedido.html" class="list-group-item list-group-item-action bg-light">Novo Pedido</a>
+        <a href="client.html" class="list-group-item list-group-item-action bg-light">Novo Cliente</a>
+        <a href="produtos.html" class="list-group-item list-group-item-action bg-light">Novo Produto</a>
+      </nav>
+    </div>
+    <div id="page-content">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button id="sidebar-toggle" class="btn btn-primary">Menu</button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navSupportedContent" class="collapse navbar-collapse">
+        </div>
+        <ul class="navbar-nav ml-auto mt-2">
+          <li class="nav-item.active">
+            <a href="relacao.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item dropdows">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">Meu Usuário</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a href="#" class="dropdown-item">Perfil</a>
+              <div class="dropdown-divider" ></div>
+              <a href="#" class="dropdown-item">Sair</a>
+
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="container-fluid d-block">
+        <h1 class="mt-4 mb-4">Cadastro Produtos</h1>
+        <div id="rowProduct" class="row">
+
+          <!-- <select class="form-control col-3 ml-2" name="client" id="client" data-js="list"></select> -->
+          <input type="text" class="form-control mt-2 ml-2" id="codigo" placeholder="Código">
+          <input type="text" class="form-control col-5 mt-2 ml-2" id="produto" placeholder="Produto">
+          <input type="text" class="form-control col-3 mt-2 ml-2" id="cor" placeholder="Cor">
+
+          <div class="d-flex">
+          <input type="text" class="form-control col-3 ml-2 mt-4 text-center" id="peso" placeholder="Peso Kg">
+          <input type="text" class="form-control col-3 ml-2 mt-4 text-center" id="cubagem" placeholder="Cubagem M³">
+          <button onclick="addDataBase()" id="buttonAdd" class="ml-2 mt-4"><img src="img/plus.png" id="iconButton"
+            alt="+"></button>
+          </div>
+
+        </div>
+
+
+        <div id="dtPessoas" class="text-center">
+          <h3 class="mt-4">Lista Produtos</h3>
+
+          <table id="tableProducts" class="d-inline-block mt-2">
+            <thead id="thHeaderProducts">
+              <tr id="headerhedProducts">
+                <th id="headerCod">Código</th>
+                <th id="headerProd">Produto</th>
+                <th id="headerCor">Cor</th>
+                <th id="headerPeso">Peso Kg</th>
+                <th id="headerCub">Cubagem M³</th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tbody id="tbodyProducts"></tbody>
+            </thead>
+
+
+          </table>
+
+
+        </div>        
+
+    
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+
+
+  <script src="JS/produtos.js"></script>
+  
+  <script>
+    $('#sidebar-toggle').click(function (e) {
+      e.preventDefault()
+      $('#page').toggleClass("toggled")
+    })
+
+
+  </script>
+
+  <script src="JS/auth.js"></script>
+
+  <!-- JavaScript -->
+</body>
+
+</html>

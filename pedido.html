@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <script src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js"></script>
+  <link rel="stylesheet" href="CSS/main.css">
+  <title>Novo Pedido</title>
+
+</head>
+
+<body class="navbar-top sidebar-xs datatable-page  pace-done">
+  <div id="page" class="d-flex">
+    <div id="sidebar" class="bg-light border-right">
+      <header><a href="relacao.html">Pedidos</a></header>
+      <nav class="list-group list-group-flush">
+        <a href="pedido.html" class="list-group-item list-group-item-action bg-light">Novo Pedido</a>
+        <a href="client.html" class="list-group-item list-group-item-action bg-light">Novo Cliente</a>
+        <a href="produtos.html" class="list-group-item list-group-item-action bg-light">Novo Produto</a>
+      </nav>
+    </div>
+    <div id="page-content">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button id="sidebar-toggle" class="btn btn-primary">Menu</button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navSupportedContent" class="collapse navbar-collapse">
+        </div>
+        <ul class="navbar-nav ml-auto mt-2">
+          <li class="nav-item.active">
+            <a href="relacao.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item dropdows">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="pedido.html" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Novo Pedido</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a href="client.html" class="dropdown-item">Novo Cliente</a>
+              <div class="dropdown-divider"></div>
+              <a href="produtos.html" class="dropdown-item">Novo Produto</a>
+
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="container-fluid">
+        <h1 class="mt-4 mb-4 ">Novo Pedido</h1>
+        <hr class="hr-text" data-content="AND" />
+        <div id="rowClient" class="row ">
+
+          <!-- ///////////// -->
+
+          <input type="text" class="form-control col-1 ml-2" id="pedido" placeholder="Nº Pedido">
+          <select onchange="dataAutoComplete()" list="browsers" data-js="list" class="form-control col-3 ml-2"
+            name="client" id="client" placeholder="Cliente" required="required">
+            <option id="placeHolder">Cliente</option>
+          </select>
+          <input type="text" class="form-control col-3 ml-2" id="cnpj" placeholder="CNPJ">
+          <input type="text" class="form-control col-3 ml-2" id="email" placeholder="E-mail">
+          <input type="text" class="form-control col-3 ml-2 mt-2" id="contato" placeholder="Contato">
+          <input type="text" class="form-control col-3 ml-2 mt-2" id="endereco" placeholder="Endereço">
+          <input type="text" class="form-control col-3 ml-2 mt-2" id="uf" placeholder="UF">
+          <input type="text" class="form-control col-3 ml-2 mt-2" id="cidade" placeholder="Cidade">
+          <input type="text" class="form-control col-3 ml-2 mt-2" id="cep" placeholder="CEP">
+          <input type="text" class="form-control col-3 ml-2 mt-2" id="ref" placeholder="Refêrencia">
+
+
+        </div>
+
+        <!-- ///////////// -->
+
+        <hr class="hr-text" data-content="AND" />
+
+        <!-- ///////////// -->
+        <div id="rowInfo" class="row">
+          <label for="prazoMedio" id="lDataMed" class="ml-2 mt-3 mr-0 "><strong>Prazo Médio:</strong></label>
+          <input type="text" class="form-control col-2 ml-2" id="prazoMedio" placeholder="Prazo Médio">
+          <label for="pagamento" id="lDataPag" class="ml-4 mt-3 mr-0"><strong>Pagamento:</strong></label>
+          <input type="text" class="form-control col-2 ml-2 mt-0" id="pagamento" placeholder="Pagamento">
+        </div>
+        <!-- ///////////// -->
+        <div id="rowDate" class="row">
+          <label for="dataPedido" id="lDataPedido" class="ml-2 mt-4 mr-0 "><strong>Data Pedido:</strong></label>
+          <input type="date" class="form-control col-2 ml-2 mt-2" id="dataPedido" placeholder="Data Pedido">
+
+
+          <label for="dataColeta" id="lDataColeta" class="ml-4 mt-4 mr-0"><strong>Data Coleta:</strong></label>
+          <input type="date" class="form-control col-2 ml-2 mt-2" id="dataColeta" placeholder="Data Coleta">
+
+          <label for="dataColeta" id="lDataEntrega" class="ml-2 mt-4 ml-4"><strong>Data Entrega:</strong></label>
+          <input type="date" class="form-control col-2 ml-2 mt-2" id="dataEntrega" placeholder="Data Entrega">
+
+        </div>
+
+        <!-- ///////////// -->
+
+        <hr class="hr-text" data-content="AND" />
+
+
+        <!-- ///////////// -->
+        <div id="rowProduct" class="row">
+          <label for="codigo" class="ml-2 mt-4"><strong>Cód:</strong></label>
+          <input type="text" class="form-control ml-3 mt-2 text-center" id="codigo" onchange="dataAutoCompleteProduct()"
+            placeholder="Cód">
+          <button data-toggle="modal" data-target="#exampleModalCenter" id="buttonSearch"><img src="img/procurando.png"
+              id="iconButtonSearch" alt="Search"></button>
+
+          <input type="text" class="form-control col-4 ml-2 mt-2" id="produto" placeholder="Produto">
+          <input type="text" class="form-control col-3 ml-2 mt-2" id="cor" placeholder="Cor">
+          <label for="qtd" class="ml-3 mt-4"><strong>Qtd:</strong></label>
+          <input type="number" class="form-control text-center ml-2 mt-2" id="qtd" min="1" placeholder="Qtd">
+          <div class="row ml-0 mt-3">
+            <label for="valUnit" class="ml-2 mt-4"><strong>Valor Unitário R$:</strong></label>
+            <input type="text" id="valUnit" class="form-control col-2 ml-2 mt-1 form-control autonumber valUnit"
+              name="valUnit" placeholder="R$" />
+
+            <label for="valTot" class="ml-4 mt-4"><strong>Valor Total R$:</strong></label>
+            <input id="valTotal" class="form-control col-2 ml-2 mt-1" readonly="readonly" placeholder="R$" />
+            <label for="peso" class="ml-4 mt-4"><strong>Pesto Total Kg:</strong></label>
+            <input type="text" class="form-control ml-2 text-center mt-1" id="peso" placeholder="Peso kg">
+            <label for="cubagem" class="ml-4 mt-4"><strong>Cubagem Total M³:</strong></label>
+            <input type="text" class="form-control ml-2 text-center mt-1" id="cubagem" placeholder="Cubagem M³">
+
+
+            <button onclick="addScreen()" id="buttonAdd" class="ml-4"><img src="img/plus.png" id="iconButton"
+                alt="+"></button>
+          </div>
+        </div>
+
+        <!-- ///////////// -->
+        <hr>
+
+        <div class="div_panels_separacao_coleta pt-10">
+          <div class="row cards">
+            <div class="panels-pending panels-summary-top firstCard">
+              <div class="panel panel-body panel-body-tab panel-body-status" data-status="1" data-hash="pending">
+                <div class="media no-margin">
+                  <div class="media-body">
+                    <h5 class="no-margin">Volumes Total:</h5>
+                    <span class="text-uppercase text-size-mini"><b id="count-volumes">0</b>
+                      Volumes</span>
+                  </div>
+                  <div class="ml-4">
+                    <i class="icon-box"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panels-pending panels-summary-top secondCard">
+              <div class="panel panel-body panel-body-tab panel-body-status" data-status="1" data-hash="pending">
+                <div class="media no-margin">
+                  <div class="media-body">
+                    <h5 class="no-margin">Peso Total:</h5>
+                    <span class="text-uppercase text-size-mini"><b id="count-peso">0</b>
+                      Kg</span>
+                  </div>
+                  <div class="ml-4">
+                    <i class="icon-peso"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panels-pending panels-summary-top thirdCard">
+              <div class="panel panel-body panel-body-tab panel-body-status" data-status="1" data-hash="pending">
+                <div class="media no-margin">
+                  <div class="media-body">
+                    <h5 class="no-margin">Cubagem Total:</h5>
+                    <span class="text-uppercase text-size-mini"><b id="count-cubagem">0</b>
+                      m³</span>
+                  </div>
+                  <div class="ml-4">
+                    <i class="icon-cubagem"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panels-pending panels-summary-top fourthCard">
+              <div class="panel panel-body panel-body-tab panel-body-status" data-status="1" data-hash="pending">
+                <div class="media no-margin">
+                  <div class="media-body">
+                    
+                    <h5 class="no-margin">Valor Total:</h5>
+                    <span class="text-uppercase text-size-mini">R$ <b id="count-valorTotal">0</b>
+                    </span>
+                  </div>
+                  <div class="ml-4">
+                    <i class="icon-valorTotal"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panels-pending panels-summary-top fifthCard">
+              <div class="panel panel-body panel-body-tab panel-body-status" data-status="1" data-hash="pending">
+                <div class="media no-margin">
+                  <div class="media-body">
+                    
+                    <h5 class="no-margin">Valor Total C/ IPI:</h5>
+                    <span class="text-uppercase text-size-mini" id="valorIPIbefore">R$ <b id="count-valorIPI">0</b>
+                    </span>
+                  </div>
+                  <div class="ml-4">
+                    <i class="icon-valorIPI"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+        <hr>
+        <div id="dtPessoas">
+
+          <table id="tbPessoas" width="100%">
+            <thead id="thHeader">
+              <tr>
+                <th id="thCod">Código</th>
+                <th>Produto</th>
+                <th>Cor</th>
+                <th>Quantidade</th>
+                <th>Peso Total</th>
+                <th>Cubagem Total</th>
+                <th>Valor Unit</th>
+                <th>Valor Total</th>
+                <th id="headerActionEdit"></th>
+                <th id="headerActionDel"></th>
+              </tr>
+            </thead>
+            <tbody id="tbodyPedidos">
+
+            </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th id="qtdTotal"></th>
+                <th id="pesoTotal"></th>
+                <th id="cubTotal"></th>
+                <th></th>
+                <th id="valorTotal"></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </tfoot>
+          </table>
+
+
+        </div>
+
+
+        <button onclick="addDataBase()" id="finalizarButton" class="btn btn-primary ml-0 mb-3 mt-3">Finalizar
+          Cadastro</button>
+
+      </div>
+    </div>
+
+    <!-- Modal para Produtos -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+      aria-labelledby="selectedInvoicesModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content" id="documentModal">
+          <div class="modal-header" id="headerModal">
+            <h5 class="modal-title" id="exampleModalLongTitle">Pesquisa Produtos</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h6>Selecione o produto</h4>
+              <div class="row">
+                <input type="search" id="produtoSearch" class="form-control w-50 ml-4 mt-2 mb-4" placeholder="Produto">
+                <input type="search" id="corSearch" class="form-control w-25 ml-2 mt-2 mb-4" placeholder="Cor">
+              </div>
+
+              <div id="tabela">
+
+                <table id="tableSearch">
+                  <thead>
+                    <tr id="thSearch">
+                      <th id="thCheck"></th>
+                      <th id="thCod">Código</th>
+                      <th id="thProd">Produto</th>
+                      <th id="thCor">Cor</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbodySearch">
+
+                  </tbody>
+                </table>
+
+              </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" onblur="dataAutoCompleteProduct()" style="display: inline-block;" id="buttSearch"
+              data-dismiss="modal" class="btn btn-primary">Selecionar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Modal para Produtos -->
+
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+
+// Funcao para multiplicar o valor pela qtd
+
+    var valueUni = document.getElementById("valUnit")
+    var qtds = document.getElementById("qtd")
+
+    valueUni.addEventListener('change', () => {
+      var qtds = document.getElementById("qtd")
+      var valTotal = document.getElementById("valTotal")
+      var moeda = valueUni.value
+      var g = moeda.replace(",", ".")
+      var resultado = g * qtds.value
+      const total = resultado.toFixed(2)
+      const totalForm = total.replace(".", ",")
+      valTotal.value = total
+
+
+    })
+
+    qtds.addEventListener('change', () => {
+      var qtds = document.getElementById("qtd")
+      var valTotal = document.getElementById("valTotal")
+      var moeda = valueUni.value
+      var g = moeda.replace(",", ".")
+      var resultado = g * qtds.value
+      const total = resultado.toFixed(2)
+      const totalForm = total.replace(".", ",")
+      valTotal.value = total
+    })
+
+
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+
+  <script>
+    $('#sidebar-toggle').click(function (e) {
+      e.preventDefault()
+      $('#page').toggleClass("toggled")
+    })
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+  <script src="JS/pedido.js"></script>
+
+  <script src="JS/auth.js"></script>
+
+  <!-- JavaScript -->
+
+
+
+</body>
+
+</html>
